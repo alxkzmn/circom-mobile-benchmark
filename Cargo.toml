@@ -1,0 +1,23 @@
+[package]
+name = "mopro-example-app"
+version = "0.1.0"
+edition = "2021"
+
+# We're going to build a static library named mopro_bindings
+# This library name should not be changed
+[lib]
+crate-type = ["lib", "cdylib", "staticlib"]
+name = "mopro_bindings"
+
+[dependencies]
+mopro-ffi = { path = "../mopro/mopro-ffi", default-features=false }
+uniffi = { version = "0.28", features = ["cli"] }
+num-bigint = "0.4.0"
+witnesscalc-adapter = { git = "https://github.com/zkmopro/witnesscalc_adapter" }
+anyhow = "1.0.95"
+rust-rapidsnark = { git = "https://github.com/zkmopro/rust-rapidsnark.git", version = "0.1.0" }
+
+[build-dependencies]
+mopro-ffi = { path = "../mopro/mopro-ffi", default-features=false }
+uniffi = { version = "0.28", features = ["build"] }
+witnesscalc-adapter = { git = "https://github.com/zkmopro/witnesscalc_adapter", version = "0.1.0" }

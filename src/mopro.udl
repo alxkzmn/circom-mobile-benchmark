@@ -1,0 +1,34 @@
+namespace mopro {
+  [Throws=MoproError]
+  GenerateProofResult generate_circom_proof(string zkey_path, string inputs_json);
+
+  [Throws=MoproError]
+  boolean verify_circom_proof(string vkey, string proof, string public_input);
+};
+
+dictionary GenerateProofResult {
+  string proof;
+  string inputs;
+};
+
+dictionary G1 {
+  string x;
+  string y;
+};
+
+dictionary G2 {
+  sequence<string> x;
+  sequence<string> y;
+};
+
+dictionary ProofCalldata {
+  G1 a;
+  G2 b;
+  G1 c;
+};
+
+[Error]
+enum MoproError {
+  "CircomError",
+  "Halo2Error"
+};
