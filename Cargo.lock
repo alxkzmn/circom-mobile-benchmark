@@ -433,6 +433,7 @@ dependencies = [
 [[package]]
 name = "mopro-ffi"
 version = "0.1.1"
+source = "git+https://github.com/zkmopro/mopro.git#f8db88ca74a078342efee19796496e8821ce85d4"
 dependencies = [
  "anyhow",
  "bincode",
