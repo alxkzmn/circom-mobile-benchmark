@@ -1,0 +1,5 @@
+node_modules/
+**.zkey
+**.ptau
+sha256_cpp/
+**.r1cs
